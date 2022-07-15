@@ -86,12 +86,26 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  let sumArray = 0;
+  let myStr5 = "";
 
+  for( let i = 0; i < testArray.length; i++) {
+    sumArray = sum(sumArray,testArray[i])[0];
+    myStr5 += `${testArray[i]}`;
+    if ( i !== testArray.length - 1)
+    {
+      myStr5 += ',';
+    }
+  }
+  // myStr5 = `${testArray[0]}, ${testArray[1]},${testArray[2]},was passed in as an array of numbers, and ${sumA} is their sum.`; --
+  // return[sumArray,myStr5]; -- 
+  myStr5 += ` was passed in as an array of numbers, and ${sumArray} is their sum.`;
+  return[sumArray,myStr5];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
